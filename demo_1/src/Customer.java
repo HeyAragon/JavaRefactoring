@@ -9,7 +9,7 @@ public class Customer {
         this._name = _name;
     }
 
-    private void addRental(Rental rental) {
+    public void addRental(Rental rental) {
         _rentals.addElement(rental);
 
     }
@@ -23,7 +23,7 @@ public class Customer {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         Enumeration<Rental> rentals = _rentals.elements();
-        StringBuilder result = new StringBuilder("Rental Record for" + getName() + "\n");
+        StringBuilder result = new StringBuilder("Rental Record for " + getName() + "\n");
         while (rentals.hasMoreElements()) {
             double thisAmount = 0;
             Rental each = rentals.nextElement();
@@ -65,8 +65,8 @@ public class Customer {
         }
 
         //add footer lines
-        result.append("Amount owed is").append(String.valueOf(totalAmount)).append("\n");
-        result.append("You earned").append(String.valueOf(frequentRenterPoints)).append("frequent renter points");
+        result.append("Amount owed is").append("\t").append(String.valueOf(totalAmount)).append("\n");
+        result.append("You earned").append("\t").append(String.valueOf(frequentRenterPoints)).append("\t").append("frequent renter points");
 
 
 
